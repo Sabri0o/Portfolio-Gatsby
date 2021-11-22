@@ -1,9 +1,10 @@
 import React from 'react'
 import Layout from '../components/layout'
-export default function Home() {
+
+export default function Works() {
     return (
-        <Layout pageTitle={'Home'}>
-            this is home page
+        <Layout pageTitle={'Works'}>
+            this is works page
         </Layout>
     )
 }
