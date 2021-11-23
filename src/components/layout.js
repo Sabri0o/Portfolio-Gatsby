@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
+import { Container } from "react-bootstrap";
+
 import {
   navLinks,
   navLinkItem,
@@ -20,7 +22,7 @@ import {
 
 const Layout = ({ pageTitle, children }) => {
   return (
-    <div>
+    <Container style={{marginTop:'15px'}}>
       <title>{pageTitle}</title>
       <nav>
         <ul className={navLinks}>
@@ -82,7 +84,7 @@ const Layout = ({ pageTitle, children }) => {
           </div>
         </div>
       </footer>
-    </div>
+    </Container>
   );
 };
 

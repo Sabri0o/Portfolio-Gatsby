@@ -1,9 +1,10 @@
-import React from 'react'
-import Layout from '../components/layout'
+import React from "react";
+import Layout from "../components/layout";
+import Info from "./info";
 export default function Home() {
-    return (
-        <Layout pageTitle={'Home'}>
-            this is home page
-        </Layout>
-    )
+  return (
+    <Layout>
+      <Info />
+    </Layout>
+  );
 }

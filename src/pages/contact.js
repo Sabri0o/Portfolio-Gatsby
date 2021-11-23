@@ -3,7 +3,7 @@ import Layout from '../components/layout'
 
 export default function Contact() {
     return (
-        <Layout pageTitle={'Conatct'}>
+        <Layout pageTitle={'Contact'}>
             this is contact page
         </Layout>
     )
