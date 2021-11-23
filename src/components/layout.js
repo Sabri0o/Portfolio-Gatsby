@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
 
 import {
   navLinks,
   navLinkItem,
   navLinkText,
-  footerStyle,
   social_logos,
   footerText,
   logo,
@@ -22,7 +21,7 @@ import {
 
 const Layout = ({ pageTitle, children }) => {
   return (
-    <Container style={{marginTop:'15px'}}>
+    <div style={{marginTop:'15px'}}>
       <title>{pageTitle}</title>
       <nav>
         <ul className={navLinks}>
@@ -52,7 +51,7 @@ const Layout = ({ pageTitle, children }) => {
         <h1>{pageTitle}</h1>
         {children}
       </main>
-      <footer className={footerStyle}>
+      <footer>
         <div>
           <div className={social_logos}>
             <a href="https://www.youtube.com/c/jamesqquick" className={logo}>
@@ -84,7 +83,7 @@ const Layout = ({ pageTitle, children }) => {
           </div>
         </div>
       </footer>
-    </Container>
+    </div>
   );
 };
 

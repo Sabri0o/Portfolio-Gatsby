@@ -1,18 +1,18 @@
 import React from "react";
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Row, Col, Image } from "react-bootstrap";
 import photo from "../images/photo.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const imageStyle = {
-  width: 150,
-  height: 150,
-  borderRadius: 150 / 2,
+  width: 200,
+  height: 200,
+  borderRadius: 200 / 2,
 };
 
 const center = {
   display: "flex",
   justifyContent: "center",
-  alignItems:"center",
+  alignItems: "center",
 };
 
 const h2 = {
@@ -49,30 +49,9 @@ const buttonStyle = {
   color: "#FFFFFF",
 };
 
-// width: 208px;
-// height: 47px;
-// left: 148px;
-// top: 477px;
-
-// /* Primary */
-
-// background: #FF6464;
-// border-radius: 2px;
-
-// width: 167px;
-// height: 21px;
-// left: 168px;
-// top: 486px;
-
-// font-family: Heebo;
-// font-style: normal;
-// font-weight: 500;
-// font-size: 20px;
-// line-height: 29px;
-
 export default function Info() {
   return (
-    <Container style={{ marginTop: "50px" }}>
+    <div style={{ margin: "50px" }}>
       <Row>
         <Col md={8}>
           <h2 style={h2}>Hi, I am John,</h2>
@@ -89,6 +68,6 @@ export default function Info() {
           <Image src={photo} style={imageStyle} />
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 }
