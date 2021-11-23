@@ -7,6 +7,7 @@ const imageStyle = {
   width: 200,
   height: 200,
   borderRadius: 200 / 2,
+  borderStyle:"groove"
 };
 
 const center = {
