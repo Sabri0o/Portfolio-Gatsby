@@ -35,8 +35,6 @@ const p = {
 const buttonStyle = {
   width: "208px",
   height: "47px",
-  left: "148px",
-  top: "477px",
   background: "#FF6464",
   borderRadius: "2px",
 
@@ -51,7 +49,7 @@ const buttonStyle = {
 
 export default function Info() {
   return (
-    <div style={{ margin: "50px" }}>
+    <div style={{ padding: "50px" }}>
       <Row>
         <Col md={8}>
           <h2 style={h2}>Hi, I am John,</h2>
@@ -60,13 +58,17 @@ export default function Info() {
           <p style={p}>
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
             sint. Velit officia consequat duis enim velit mollit. Exercitation
+            veniam consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+            sint. Velit officia consequat duis enim velit mollit. Exercitation
             veniam consequat sunt nostrud amet.
           </p>
-          <button style={buttonStyle}>Download Resume</button>
         </Col>
         <Col md={4} style={center}>
           <Image src={photo} style={imageStyle} />
         </Col>
+        <div style={{ marginTop: "20px" }}>
+          <button style={buttonStyle}>Download Resume</button>
+        </div>
       </Row>
     </div>
   );

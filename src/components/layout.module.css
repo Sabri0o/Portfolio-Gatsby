@@ -17,7 +17,6 @@
   text-align: right;
 
   color: #000000;
-
 }
 
 .social_logos {
@@ -35,9 +34,17 @@
 .logo {
   margin: 0 1rem;
   display: inline-block;
-  color: #21243D;
+  color: #21243d;
 }
 
-.gatsby{
+.gatsby {
   margin-left: 5px;
+}
+
+.footerStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 50px;
 }

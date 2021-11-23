@@ -10,6 +10,7 @@ import {
   footerText,
   logo,
   gatsby,
+  footerStyle
 } from "./layout.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -21,7 +22,7 @@ import {
 
 const Layout = ({ pageTitle, children }) => {
   return (
-    <div style={{marginTop:'15px'}}>
+    <div style={{ marginTop: "15px" }}>
       <title>{pageTitle}</title>
       <nav>
         <ul className={navLinks}>
@@ -51,8 +52,8 @@ const Layout = ({ pageTitle, children }) => {
         <h1>{pageTitle}</h1>
         {children}
       </main>
-      <footer>
-        <div>
+      <footer className={footerStyle} >
+        <div >
           <div className={social_logos}>
             <a href="https://www.youtube.com/c/jamesqquick" className={logo}>
               <FontAwesomeIcon icon={faLinkedin} size="2x" />

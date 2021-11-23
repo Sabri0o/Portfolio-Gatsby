@@ -1,14 +1,13 @@
 import React from "react";
 import PostCardHome from "./postCardHome";
-import { Row, Col } from "react-bootstrap";
+import {  Col } from "react-bootstrap";
 import { Link } from "gatsby";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const containerStyle = {
   display: "flex",
-  justifyContent: "space-between ",
-  margin: "50px",
+  justifyContent: "center",
+  padding: "30px",
 };
 
 const recentPost = {
@@ -31,9 +30,9 @@ const viewAll = {
 
 export default function RecentPosts() {
   return (
-    <div style={{ backgroundColor: "#EDF7FA"}}>
-      <Row style={containerStyle}>
-        <Col style={{ padding: "25px"}}>
+    <div style={{ backgroundColor: "#EDF7FA", width: "auto" }}>
+      <div style={containerStyle}>
+        <Col style={{ padding: "10px" }}>
           <div
             style={{
               display: "flex",
@@ -47,7 +46,7 @@ export default function RecentPosts() {
           </div>
           <PostCardHome />
         </Col>
-        <Col style={{ padding: "25px"}}>
+        <Col style={{ padding: "10px" }}>
           <div style={{ padding: "5px", height: "40px" }}>
             <Link to="/" style={viewAll}>
               view all
@@ -55,7 +54,7 @@ export default function RecentPosts() {
           </div>
           <PostCardHome />
         </Col>
-      </Row>
+      </div>
     </div>
   );
 }
