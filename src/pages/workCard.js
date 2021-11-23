@@ -20,7 +20,27 @@ const center = {
   marginTop: "10px",
 };
 
-export default function WorkCardHome(props) {
+const spacing = {
+  margin: "15px",
+};
+
+const dateStyle = {
+  width: "70",
+  height: "20",
+  background: "#142850",
+  borderRadius: "16px",
+  fontFamily:"Heebo",
+  fontStyle:"normal",
+  fontWeight:"900",
+  fontSize:"18",
+  lineHeight:"60px",
+  color: "#FFFFFF",
+  padding:'5px'
+};
+
+
+
+export default function WorkCard(props) {
   return (
     <div style={center}>
       <Row>
@@ -29,8 +49,12 @@ export default function WorkCardHome(props) {
         </Col>
         <Col md={8} style={containerStyle}>
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Subtitle>Card Subtitle</Card.Subtitle>
+            <Card.Title style={spacing}>Card Title</Card.Title>
+            <Card.Subtitle style={spacing}>
+              {<span style={dateStyle}>2021</span>}
+              {` | `}
+              {<span>project task</span>}
+            </Card.Subtitle>
             <Card.Text>
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -44,5 +68,3 @@ export default function WorkCardHome(props) {
     </div>
   );
 }
-
-// border: 1px solid #E0E0E0;

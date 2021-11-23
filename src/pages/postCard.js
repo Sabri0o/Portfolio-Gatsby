@@ -2,8 +2,6 @@ import React from "react";
 import { Card } from "react-bootstrap";
 
 const cardStyle = {
-  // width: "auto",
-  // height: "auto",
   Radius: "4px",
 };
 const center = {
@@ -12,7 +10,7 @@ const center = {
   alignItems: "center",
 };
 
-export default function PostCardHome(props) {
+export default function PostCard(props) {
   return (
     <div style={center}>
       <Card style={cardStyle}>

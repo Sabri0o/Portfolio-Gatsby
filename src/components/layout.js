@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "gatsby";
-// import { Container } from "react-bootstrap";
 
 import {
   navLinks,
@@ -10,7 +9,7 @@ import {
   footerText,
   logo,
   gatsby,
-  footerStyle
+  footerStyle,
 } from "./layout.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -42,9 +41,7 @@ const Layout = ({ pageTitle, children }) => {
             </Link>
           </li>
           <li className={navLinkItem}>
-            <Link to="/contact" className={navLinkText}>
-              Contact
-            </Link>
+            <Link className={navLinkText}>Contact</Link>
           </li>
         </ul>
       </nav>
@@ -52,8 +49,8 @@ const Layout = ({ pageTitle, children }) => {
         <h1>{pageTitle}</h1>
         {children}
       </main>
-      <footer className={footerStyle} >
-        <div >
+      <footer className={footerStyle}>
+        <div>
           <div className={social_logos}>
             <a href="https://www.youtube.com/c/jamesqquick" className={logo}>
               <FontAwesomeIcon icon={faLinkedin} size="2x" />

@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
-import WorkCardHome from "./workCardHome";
+import WorkCard from "./workCard";
 
 const featuredWork = {
   fontFamily: "Heebo",
@@ -11,7 +10,7 @@ const featuredWork = {
   color: "#21243D",
 };
 
-export default function Works() {
+export default function WorksHome() {
   return (
     <div>
       <div
@@ -21,13 +20,11 @@ export default function Works() {
           marginLeft: "42px",
         }}
       >
-        <Link to="/" style={featuredWork}>
-          Featured work
-        </Link>
+        <span style={featuredWork}> Featured work</span>
       </div>
-      <WorkCardHome />
-      <WorkCardHome />
-      <WorkCardHome />
+      <WorkCard />
+      <WorkCard />
+      <WorkCard />
     </div>
   );
 }

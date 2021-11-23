@@ -1,6 +1,6 @@
 import React from "react";
-import PostCardHome from "./postCardHome";
-import {  Col } from "react-bootstrap";
+import PostCard from "./postCard";
+import { Col } from "react-bootstrap";
 import { Link } from "gatsby";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -40,19 +40,17 @@ export default function RecentPosts() {
               height: "40px",
             }}
           >
-            <Link to="/" style={recentPost}>
-              Recent posts
-            </Link>
+            <span style={recentPost}>Recent posts</span>
           </div>
-          <PostCardHome />
+          <PostCard />
         </Col>
         <Col style={{ padding: "10px" }}>
           <div style={{ padding: "5px", height: "40px" }}>
-            <Link to="/" style={viewAll}>
+            <Link to="/blog" style={viewAll}>
               view all
             </Link>
           </div>
-          <PostCardHome />
+          <PostCard />
         </Col>
       </div>
     </div>
