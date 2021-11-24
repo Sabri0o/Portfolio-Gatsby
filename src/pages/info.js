@@ -7,7 +7,7 @@ const imageStyle = {
   width: 200,
   height: 200,
   borderRadius: 200 / 2,
-  borderStyle:"groove"
+  borderStyle: "groove",
 };
 
 const center = {
@@ -48,20 +48,26 @@ const buttonStyle = {
   color: "#FFFFFF",
 };
 
+const tab = {
+  display: "inline-block",
+  marginLeft: "20px",
+};
+
 export default function Info() {
   return (
     <div style={{ padding: "50px" }}>
       <Row>
         <Col md={8}>
-          <h2 style={h2}>Hi, I am John,</h2>
-          <h2 style={h2}> Creative Technologist</h2>
+          <h2 style={h2}>Hi, my name is Sabri,</h2>
+          <h2 style={h2}>A motivated junior fullstack web developer,</h2>
 
           <p style={p}>
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-            sint. Velit officia consequat duis enim velit mollit. Exercitation
-            veniam consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-            sint. Velit officia consequat duis enim velit mollit. Exercitation
-            veniam consequat sunt nostrud amet.
+            <span style={tab}></span>a problem solver and a quick thinker. I am
+            dedicated to my own continuous self-development, I enjoy working
+            closely with others <br /> and I am a detail-oriented person with a
+            good methodology to overcome roadblocks. I am looking to work in a
+            fast-paced and challenging environment where I can apply my
+            knowledge.
           </p>
         </Col>
         <Col md={4} style={center}>
