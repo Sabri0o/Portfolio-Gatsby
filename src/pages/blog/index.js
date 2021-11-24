@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../../components/layout";
 import { Card, Row } from "react-bootstrap";
 import { Link, graphql } from "gatsby";
+// import { MDXRenderer } from "gatsby-plugin-mdx";
 
 export default function Blog({ data }) {
   const spacing = {
@@ -18,25 +19,20 @@ export default function Blog({ data }) {
     <Layout>
       <h2 style={{ marginLeft: "100px" }}>Blog</h2>
       <div style={container}>
-        {data.allFile.nodes.map((node) => (
-          <Row key={node.name}>
+        {data.allMdx.nodes.map((node) => (
+          <Row key={node.id}>
             <Link
               to="/blog/readBlog"
               style={{ color: "inherit", textDecoration: "none" }}
             >
               <Card.Body>
-                <Card.Title style={spacing}>{node.name}</Card.Title>
+                <Card.Title style={spacing}>
+                  {node.frontmatter.title}
+                </Card.Title>
                 <Card.Subtitle style={spacing}>
-                  23 Nov 2021 | My Blog
+                  {node.frontmatter.date} | {node.frontmatter.topic}
                 </Card.Subtitle>
-                <Card.Text>
-                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                  amet sint. Velit officia consequat duis enim velit mollit.
-                  Exercitation veniam consequat sunt nostrud amet.Amet minim
-                  mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-                  Velit officia consequat duis enim velit mollit. Exercitation
-                  veniam consequat sunt nostrud amet.
-                </Card.Text>
+                <Card.Text>{node.excerpt} </Card.Text>
               </Card.Body>
             </Link>
             <hr style={{ border: "1px solid #E0E0E0" }} />
@@ -49,9 +45,17 @@ export default function Blog({ data }) {
 
 export const query = graphql`
   query {
-    allFile {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
-        name
+        frontmatter {
+          date(formatString: "MMMM D, YYYY")
+          title
+          topic
+        }
+        id
+        body
+        timeToRead
+        excerpt(pruneLength: 250)
       }
     }
   }
