@@ -1,34 +1,35 @@
 import React from "react";
+import { Col } from "react-bootstrap";
 import Layout from "../../components/layout";
 
 export default function readBlog() {
   const header = {
     display: "flex",
-    justifyContent: "space-Between",
+    justifyContent: "space-between",
+  };
+
+  const container = {
+    display: "flex",
+    flexDirection: "column",
+    padding : "50px"
+  };
+
+  const center = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   };
   return (
     <Layout>
-      <div
-        style={{
-          marginTop: "100px",
-          marginLeft: "200px",
-          marginRight: "200px",
-        }}
-      >
-        <h1
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignContent: "center",
-          }}
-        >
-          My blog
-        </h1>
+      <Col style={container}>
+        <div style={center}>
+          <h1>My blog</h1>
+        </div>
+        <div style={header}>
+          <h5>23/11/2021</h5>
+          <h5>1 min read</h5>
+        </div>
         <div>
-          <div style={header}>
-            <h5>23/11/2021</h5>
-            <h5>1 min read</h5>
-          </div>
           <p>
             Lorem ipsum dolor sit amet. Ex galisum sint est autem eveniet id
             deleniti assumenda eum provident laudantium est esse voluptatem est
@@ -55,7 +56,7 @@ export default function readBlog() {
             voluptatem architecto.
           </p>
         </div>
-      </div>
+      </Col>
     </Layout>
   );
 }

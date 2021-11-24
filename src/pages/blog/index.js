@@ -8,10 +8,16 @@ export default function Blog() {
     margin: "15px",
   };
 
+  const container = {
+    display: "flex",
+    flexDirection: "column",
+    padding: "50px",
+  };
+
   return (
     <Layout>
       <h2 style={{ marginLeft: "100px" }}>Blog</h2>
-      <div style={{ marginLeft: "200px", marginRight: "200px" }}>
+      <div style={container}>
         <Row>
           <Link
             to="/blog/readBlog"
