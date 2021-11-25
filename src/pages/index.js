@@ -3,12 +3,32 @@ import Layout from "../components/layout";
 import Info from "./info";
 import RecentPosts from "./recentPosts";
 import WorksHome from "./worksHome";
-export default function Home() {
+import { graphql } from "gatsby";
+import { postContext } from "../context";
+export default function Home({ data }) {
   return (
     <Layout>
       <Info />
-      <RecentPosts />
+      <postContext.Provider value={data.allMdx.nodes}>
+        <RecentPosts />
+      </postContext.Provider>
       <WorksHome />
     </Layout>
   );
 }
+
+export const query = graphql`
+  query {
+    allMdx(limit: 2, sort: { fields: frontmatter___date, order: DESC }) {
+      nodes {
+        excerpt(pruneLength: 100)
+        slug
+        frontmatter {
+          date
+          title
+          topic
+        }
+      }
+    }
+  }
+`;

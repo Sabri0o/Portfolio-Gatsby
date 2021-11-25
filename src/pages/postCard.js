@@ -11,22 +11,21 @@ const center = {
   alignItems: "center",
 };
 
-export default function PostCard(props) {
+export default function PostCard({ data }) {
+  console.log(data);
   return (
     <div style={center}>
       <Link
-        to="/blog/readBlog"
+        to={`/blog/${data.slug}`}
         style={{ color: "inherit", textDecoration: "none" }}
       >
         <Card style={cardStyle}>
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Subtitle>Card Subtitle</Card.Subtitle>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.Some quick example text to build on the
-              card title and make up the bulk of the card's content.
-            </Card.Text>
+            <Card.Title>{data.frontmatter.title} </Card.Title>
+            <Card.Subtitle>
+              {data.frontmatter.date} | {data.frontmatter.topic}
+            </Card.Subtitle>
+            <Card.Text>{data.excerpt}</Card.Text>
           </Card.Body>
         </Card>
       </Link>

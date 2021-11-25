@@ -8,6 +8,10 @@ export default function readBlog({ data }) {
   const header = {
     display: "flex",
     justifyContent: "space-between",
+    fontFamily: "Heebo",
+    fontStyle: "normal",
+    fontWeight: "bold",
+    fontSize: "44px",
   };
 
   const container = {
@@ -22,7 +26,6 @@ export default function readBlog({ data }) {
     alignItems: "center",
   };
 
-  // console.log(data);
   return (
     <Layout>
       <Col style={container}>
@@ -31,7 +34,7 @@ export default function readBlog({ data }) {
         </div>
         <div style={header}>
           <h5>{data.mdx.frontmatter.date}</h5>
-          <h5>{data.mdx.timeToRead}</h5>
+          <h5>{data.mdx.timeToRead}min</h5>
         </div>
         <div>
           <p>

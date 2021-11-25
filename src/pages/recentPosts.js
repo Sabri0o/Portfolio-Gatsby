@@ -1,7 +1,9 @@
 import React from "react";
-import PostCard from "./postCard";
+import { useContext } from "react";
 import { Col } from "react-bootstrap";
 import { Link } from "gatsby";
+import { postContext } from "../context";
+import PostCard from "./postCard";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const containerStyle = {
@@ -29,6 +31,8 @@ const viewAll = {
 };
 
 export default function RecentPosts() {
+  const posts = useContext(postContext);
+  console.log(posts);
   return (
     <div style={{ backgroundColor: "#EDF7FA", width: "auto" }}>
       <div style={containerStyle}>
@@ -42,7 +46,7 @@ export default function RecentPosts() {
           >
             <span style={recentPost}>Recent posts</span>
           </div>
-          <PostCard />
+          <PostCard data={posts[0]} />
         </Col>
         <Col style={{ padding: "10px" }}>
           <div style={{ padding: "5px", height: "40px" }}>
@@ -50,7 +54,7 @@ export default function RecentPosts() {
               view all
             </Link>
           </div>
-          <PostCard />
+          <PostCard data={posts[1]} />
         </Col>
       </div>
     </div>
