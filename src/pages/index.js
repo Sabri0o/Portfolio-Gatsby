@@ -4,16 +4,15 @@ import Info from "./info";
 import RecentPosts from "./recentPosts";
 import WorksHome from "./worksHome";
 import { graphql } from "gatsby";
-import { postContext } from "../context";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import { postContext } from "../context";
 
 export default function Home({ data }) {
   return (
     <Layout>
       <Info />
-      <postContext.Provider value={data.allMdx.nodes}>
-        <RecentPosts />
-      </postContext.Provider>
+      {/* <postContext.Provider value={data.allMdx.nodes}> */}
+      <RecentPosts data={data} />
+      {/* </postContext.Provider> */}
       <WorksHome />
     </Layout>
   );
