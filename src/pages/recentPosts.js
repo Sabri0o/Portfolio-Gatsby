@@ -29,8 +29,8 @@ const viewAll = {
   color: "#00A8CC",
 };
 
+const posts = useContext(postContext);
 export default function RecentPosts() {
-  const posts = useContext(postContext);
   return (
     <div style={{ backgroundColor: "#EDF7FA", width: "auto" }}>
       <div style={containerStyle}>
