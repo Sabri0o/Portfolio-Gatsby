@@ -76,7 +76,6 @@ export default function Info() {
         src="../images/myProfilePhoto.jpg"
         style={imageStyle} 
       />
-          {/* <Image src={photo} /> */}
         </Col>
         <div style={{ marginTop: "20px" }}>
           <button style={buttonStyle}>Download Resume</button>

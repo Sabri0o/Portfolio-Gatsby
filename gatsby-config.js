@@ -12,6 +12,13 @@ module.exports = {
         path: `${__dirname}/blog`,
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `featuredWorks`,
+        path: `${__dirname}/featuredWorks`,
+      },
+    },
     "gatsby-plugin-mdx",
   ],
 };

@@ -4,7 +4,6 @@ import { Card, Row } from "react-bootstrap";
 import { Link, graphql } from "gatsby";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
 export default function Blog({ data }) {
   const spacing = {
     margin: "15px",
@@ -44,18 +43,23 @@ export default function Blog({ data }) {
 }
 
 export const query = graphql`
-  query {
-    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
-      nodes {
-        frontmatter {
-          date(formatString: "MMMM D, YYYY")
-          title
-          topic
+query {
+  allMdx(sort: { fields: frontmatter___date, order: DESC }filter: {fileAbsolutePath: {regex: "/(blog)/.*.mdx$/"}}
+) {
+    nodes {
+      excerpt(pruneLength: 250)
+      slug
+      frontmatter {
+        date
+        title
+        topic
+      }
+      parent {
+        ... on File {
+          sourceInstanceName
         }
-        id
-        excerpt(pruneLength: 250)
-        slug
       }
     }
   }
+}
 `;
