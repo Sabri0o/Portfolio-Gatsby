@@ -4,7 +4,6 @@ import { Col } from "react-bootstrap";
 import { Link } from "gatsby";
 import { postContext } from "../context";
 import PostCard from "./postCard";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const containerStyle = {
   display: "flex",
@@ -32,7 +31,6 @@ const viewAll = {
 
 export default function RecentPosts() {
   const posts = useContext(postContext);
-  console.log(posts);
   return (
     <div style={{ backgroundColor: "#EDF7FA", width: "auto" }}>
       <div style={containerStyle}>

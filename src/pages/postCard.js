@@ -2,6 +2,7 @@ import { Link } from "gatsby";
 import React from "react";
 import { Card } from "react-bootstrap";
 
+
 const cardStyle = {
   Radius: "4px",
 };
@@ -12,7 +13,6 @@ const center = {
 };
 
 export default function PostCard({ data }) {
-  console.log(data);
   return (
     <div style={center}>
       <Link

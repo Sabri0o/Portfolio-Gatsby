@@ -2,6 +2,8 @@ import React from "react";
 import Layout from "../../components/layout";
 import { Card, Row } from "react-bootstrap";
 import { Link, graphql } from "gatsby";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 export default function Blog({ data }) {
   const spacing = {
@@ -13,7 +15,6 @@ export default function Blog({ data }) {
     flexDirection: "column",
     padding: "50px",
   };
-  console.log("data: ", data);
   return (
     <Layout>
       <h2 style={{ marginLeft: "100px" }}>Blog</h2>

@@ -5,6 +5,8 @@ import RecentPosts from "./recentPosts";
 import WorksHome from "./worksHome";
 import { graphql } from "gatsby";
 import { postContext } from "../context";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 export default function Home({ data }) {
   return (
     <Layout>

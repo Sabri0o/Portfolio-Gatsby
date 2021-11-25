@@ -1,7 +1,7 @@
 import React from "react";
-import { Row, Col, Image } from "react-bootstrap";
-import photo from "../images/photo.jpg";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Row, Col } from "react-bootstrap";
+import { StaticImage } from 'gatsby-plugin-image'
+
 
 const imageStyle = {
   width: 200,
@@ -71,7 +71,12 @@ export default function Info() {
           </p>
         </Col>
         <Col md={4} style={center}>
-          <Image src={photo} style={imageStyle} />
+        <StaticImage
+        alt="My profile photo"
+        src="../images/myProfilePhoto.jpg"
+        style={imageStyle} 
+      />
+          {/* <Image src={photo} /> */}
         </Col>
         <div style={{ marginTop: "20px" }}>
           <button style={buttonStyle}>Download Resume</button>

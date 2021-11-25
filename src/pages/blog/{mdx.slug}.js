@@ -4,6 +4,7 @@ import Layout from "../../components/layout";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
+
 export default function readBlog({ data }) {
   const header = {
     display: "flex",
@@ -37,9 +38,7 @@ export default function readBlog({ data }) {
           <h5>{data.mdx.timeToRead}min</h5>
         </div>
         <div>
-          <p>
             <MDXRenderer>{data.mdx.body}</MDXRenderer>
-          </p>
         </div>
       </Col>
     </Layout>
