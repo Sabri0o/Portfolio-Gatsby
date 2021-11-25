@@ -2,7 +2,6 @@ import React from "react";
 import Layout from "../../components/layout";
 import { Card, Row } from "react-bootstrap";
 import { Link, graphql } from "gatsby";
-// import { MDXRenderer } from "gatsby-plugin-mdx";
 
 export default function Blog({ data }) {
   const spacing = {
@@ -14,7 +13,7 @@ export default function Blog({ data }) {
     flexDirection: "column",
     padding: "50px",
   };
-
+  console.log("data: ", data);
   return (
     <Layout>
       <h2 style={{ marginLeft: "100px" }}>Blog</h2>
@@ -22,7 +21,7 @@ export default function Blog({ data }) {
         {data.allMdx.nodes.map((node) => (
           <Row key={node.id}>
             <Link
-              to="/blog/readBlog"
+              to={`/blog/${node.slug}`}
               style={{ color: "inherit", textDecoration: "none" }}
             >
               <Card.Body>
@@ -53,9 +52,8 @@ export const query = graphql`
           topic
         }
         id
-        body
-        timeToRead
         excerpt(pruneLength: 250)
+        slug
       }
     }
   }
