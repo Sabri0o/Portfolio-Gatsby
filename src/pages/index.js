@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import { Col, Card, Row } from "react-bootstrap";
 import Info from "./info";
 import { Link, graphql } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 // const containerStyle = {
 //   display: "flex",
@@ -48,7 +48,7 @@ const featuredWork = {
 };
 
 const imageStyle = {
-  width: "auto",
+  width: "250px",
   height: "180px",
   borderRadius: "4px",
 };
@@ -142,44 +142,51 @@ export default function Home({ data }) {
         <span style={featuredWork}> Featured work</span>
       </div>
 
-
-      {works.map((work) => (
-        <div
-          style={{
-            display: "flex",
-            alignContent: "center",
-            marginLeft: "42px",
-          }}
-        >
-          <Row>
-            <Col md={4} style={containerStyle}>
-              {/* <Image style={imageStyle} src={img} /> */}
-              <StaticImage
-                alt="My profile photo"
-                src="../images/imgCard.png"
-                style={imageStyle}
-              />
-            </Col>
-            <Col md={8} style={containerStyle}>
-              <Card.Body>
-                <Card.Title style={spacing}>Card Title</Card.Title>
-                <Card.Subtitle style={spacing}>
-                  {<span style={dateStyle}>2021</span>}
-                  {` | `}
-                  {<span>project task</span>}
-                </Card.Subtitle>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Col>
-            <Row style={{ marginTop: "20px" }}>
-              <hr style={{ border: "1px solid #E0E0E0" }} />
+      {works.map((work) => {
+        let image = getImage(work.frontmatter.work_image);
+        return (
+          <div
+            style={{
+              display: "flex",
+              alignContent: "center",
+              marginLeft: "42px",
+            }}
+          >
+            <Row>
+              <Col md={4} style={containerStyle}>
+                {/* <Image style={imageStyle} src={img} /> */}
+                {/* <StaticImage
+                  alt="My profile photo"
+                  src="../images/imgCard.png"
+                  style={imageStyle}
+                /> */}
+                <GatsbyImage
+                  style={imageStyle}
+                  image={image}
+                  // alt={data.mdx.frontmatter.hero_image_alt}
+                />
+              </Col>
+              <Col md={8} style={containerStyle}>
+                <Card.Body>
+                  <Card.Title style={spacing}>Card Title</Card.Title>
+                  <Card.Subtitle style={spacing}>
+                    {<span style={dateStyle}>2021</span>}
+                    {` | `}
+                    {<span>project task</span>}
+                  </Card.Subtitle>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                </Card.Body>
+              </Col>
+              <Row style={{ marginTop: "20px" }}>
+                <hr style={{ border: "1px solid #E0E0E0" }} />
+              </Row>
             </Row>
-          </Row>
-        </div>
-      ))}
+          </div>
+        );
+      })}
     </Layout>
   );
 }
@@ -190,19 +197,23 @@ export const query = graphql`
       nodes {
         excerpt(pruneLength: 100)
         slug
+        parent {
+          ... on File {
+            sourceInstanceName
+          }
+        }
         frontmatter {
           date
           title
           topic
-        }
-        parent {
-          ... on File {
-            sourceInstanceName
+          work_image {
+            id
+            childImageSharp {
+              gatsbyImageData
+            }
           }
         }
       }
     }
   }
 `;
-
-
