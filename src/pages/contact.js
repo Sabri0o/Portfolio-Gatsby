@@ -15,7 +15,7 @@ const myStyle = {
 export default function Contact() {
   return (
     <Layout>
-      <h2 style={{ marginLeft: "100px" }}>Hi there ;)</h2>
+      <h2 style={{ marginLeft: "100px", marginTop: "100px" }}>Hi there ;)</h2>
       <div style={myStyle}>
         I'm a full stack JavaScript web developer from Tunisia. Looking forward
         to meet you!

@@ -9,13 +9,12 @@
   padding-right: 2rem;
 }
 .nav-link-text {
-  font-family: Heebo;
+  font-family: "Heebo";
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 29px;
   text-align: right;
-
   color: #000000;
 }
 

@@ -165,7 +165,7 @@ export default function Home({ data }) {
                   <Card.Subtitle>
                     {
                       <span style={dateStyle}>
-                        {work.frontmatter.date.split("-")[0]}
+                        {work.frontmatter.date.split(",")[1]}
                       </span>
                     }
                     {` | `}
@@ -174,7 +174,11 @@ export default function Home({ data }) {
                   <Card.Text>{work.frontmatter.description}</Card.Text>
                   <Card.Subtitle>
                     {" "}
-                    <a href={work.frontmatter.github} target="_blank"  rel="noreferrer" >
+                    <a
+                      href={work.frontmatter.github}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <FontAwesomeIcon
                         icon={faGithub}
                         size="2x"
@@ -182,7 +186,11 @@ export default function Home({ data }) {
                       />
                     </a>
                     {` | `}
-                    <a href={work.frontmatter.workUrl} target="_blank"  rel="noreferrer" >
+                    <a
+                      href={work.frontmatter.workUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <FontAwesomeIcon
                         icon={faLink}
                         size="2x"
@@ -215,7 +223,7 @@ export const query = graphql`
           }
         }
         frontmatter {
-          date
+          date(formatString: "MMMM D, YYYY")
           github
           workUrl
           title
