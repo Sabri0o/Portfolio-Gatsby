@@ -1,7 +1,7 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
-import { StaticImage } from 'gatsby-plugin-image'
-
+import { Row, Col, Container } from "react-bootstrap";
+import { StaticImage } from "gatsby-plugin-image";
+import downloadFile from "../../downloadResume/curriculum-vitae.pdf";
 
 const imageStyle = {
   width: 200,
@@ -16,7 +16,7 @@ const center = {
   alignItems: "center",
 };
 
-const h2 = {
+const h2Style = {
   fontFamily: "Heebo",
   fontStyle: "normal",
   fontWeight: "bold",
@@ -24,7 +24,7 @@ const h2 = {
   color: "#21243D",
 };
 
-const p = {
+const pStyle = {
   fontFamily: "Heebo",
   fontStyle: "normal",
   fontWeight: "normal",
@@ -44,7 +44,6 @@ const buttonStyle = {
   fontweight: "500",
   fontSize: "20px",
   lineHeight: "29px",
-
   color: "#FFFFFF",
 };
 
@@ -55,32 +54,33 @@ const tab = {
 
 export default function Info() {
   return (
-    <div style={{ padding: "50px" }}>
+    <Container style={{ marginTop: "100px" }}>
       <Row>
         <Col md={8}>
-          <h2 style={h2}>Hi, my name is Sabri,</h2>
-          <h2 style={h2}>A motivated junior fullstack web developer,</h2>
-
-          <p style={p}>
+          <h2 style={h2Style}>Hi, my name is Sabri,</h2>
+          <h2 style={h2Style}>A motivated junior fullstack web developer,</h2>
+          <p style={pStyle}>
             <span style={tab}></span>a problem solver and a quick thinker. I am
             dedicated to my own continuous self-development, I enjoy working
-            closely with others <br /> and I am a detail-oriented person with a
-            good methodology to overcome roadblocks. I am looking to work in a
+            closely with others and I am a detail-oriented person with a good
+            methodology to overcome roadblocks. I am looking to work in a
             fast-paced and challenging environment where I can apply my
             knowledge.
           </p>
         </Col>
         <Col md={4} style={center}>
-        <StaticImage
-        alt="My profile photo"
-        src="../images/myProfilePhoto.jpg"
-        style={imageStyle} 
-      />
+          <StaticImage
+            alt="My profile photo"
+            src="../images/myProfilePhoto.jpg"
+            style={imageStyle}
+          />
         </Col>
-        <div style={{ marginTop: "20px" }}>
-          <button style={buttonStyle}>Download Resume</button>
-        </div>
       </Row>
-    </div>
+      <Row style={{ marginTop: "20px", marginBottom: "40px" }}>
+        <a href={downloadFile} download>
+          <button style={buttonStyle}>Download Resume</button>
+        </a>
+      </Row>
+    </Container>
   );
 }

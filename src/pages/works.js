@@ -1,22 +1,28 @@
 import React from "react";
 import Layout from "../components/layout";
 import { graphql } from "gatsby";
-import { Row, Col, Card } from "react-bootstrap";
+import { Row, Col, Card, Container } from "react-bootstrap";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
+const imageStyle = {
+  width: "100%",
+  height: "200px",
+  borderRadius: "6px",
+};
+
+const workCardRow = {
+  display: "flex",
+  alignItems: "center",
+};
+
+const workImage = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+};
 
 const spacing = {
   margin: "15px",
-};
-const containerStyle = {
-  display: "flex",
-  justifyContent: "center",
-  padding: "30px",
-};
-
-const imageStyle = {
-  width: "250px",
-  height: "180px",
-  borderRadius: "4px",
 };
 
 const dateStyle = {
@@ -32,41 +38,25 @@ const dateStyle = {
   color: "#FFFFFF",
   padding: "5px",
 };
+
 export default function Work({ data }) {
-  // console.log(data);
   return (
     <Layout>
-      <h2 style={{ marginLeft: "100px" }}>Feature work</h2>
+      <h2 style={{ marginLeft: "100px" }}>Featured work</h2>
       <div
         style={{ marginTop: "60px", marginLeft: "60px", marginRight: "60px" }}
       >
         {data.allMdx.nodes.map((work) => {
           let image = getImage(work.frontmatter.work_image);
           return (
-            <div
-              style={{
-                display: "flex",
-                alignContent: "center",
-                marginLeft: "42px",
-              }}
-            >
-              <Row>
-                <Col md={4} style={containerStyle}>
-                  {/* <Image style={imageStyle} src={img} /> */}
-                  {/* <StaticImage
-                  alt="My profile photo"
-                  src="../images/imgCard.png"
-                  style={imageStyle}
-                /> */}
-                  <GatsbyImage
-                    style={imageStyle}
-                    image={image}
-                    // alt={data.mdx.frontmatter.hero_image_alt}
-                  />
+            <Container key={work.slug} style={{ marginTop: "20px" }}>
+              <Row style={workCardRow}>
+                <Col md={4} style={workImage}>
+                  <GatsbyImage style={imageStyle} image={image} alt="" />
                 </Col>
-                <Col md={8} style={containerStyle}>
+                <Col md={8}>
                   <Card.Body>
-                    <Card.Title style={spacing}>Card Title</Card.Title>
+                    <Card.Title style={spacing}>{work.frontmatter.title}</Card.Title>
                     <Card.Subtitle style={spacing}>
                       {<span style={dateStyle}>2021</span>}
                       {` | `}
@@ -82,7 +72,7 @@ export default function Work({ data }) {
                   <hr style={{ border: "1px solid #E0E0E0" }} />
                 </Row>
               </Row>
-            </div>
+            </Container>
           );
         })}
       </div>
@@ -108,6 +98,8 @@ export const query = graphql`
           date
           title
           topic
+          github
+          workUrl
           work_image {
             id
             childImageSharp {

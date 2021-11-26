@@ -1,86 +1,101 @@
 import React from "react";
 import Layout from "../components/layout";
-import { Col, Card, Row } from "react-bootstrap";
+import { Col, Card, Row, Container } from "react-bootstrap";
 import Info from "./info";
 import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 
-// const containerStyle = {
-//   display: "flex",
-//   justifyContent: "center",
-//   padding: "30px",
-// };
+const recentPostStyle = {
+  fontFamily: "Heebo",
+  fontStyle: "normal",
+  fontWeight: "normal",
+  fontSize: "22px",
+  color: "#21243D",
+  justifyContent: "flex-start",
+};
 
-// const recentPostStyle = {
-//   fontFamily: "Heebo",
-//   fontStyle: "normal",
-//   fontWeight: "normal",
-//   fontSize: "22px",
-//   color: "#21243D",
-// };
-
-// const viewAll = {
-//   display: "flex",
-//   justifyContent: "flex-end",
-//   fontFamily: "Heebo",
-//   fontStyle: "normal",
-//   fontWeight: "normal",
-//   fontSize: "16px",
-//   color: "#00A8CC",
-// };
-
-// const cardStyle = {
-//   Radius: "4px",
-// };
-// const center = {
-//   display: "flex",
-//   justifyContent: "center",
-//   alignItems: "center",
-// };
+const viewAll = {
+  display: "flex",
+  justifyContent: "flex-end",
+  fontFamily: "Heebo",
+  fontStyle: "normal",
+  fontWeight: "normal",
+  fontSize: "16px",
+  color: "#00A8CC",
+};
 
 const featuredWork = {
   fontFamily: "Heebo",
   fontStyle: "normal",
   fontWeight: "normal",
   fontSize: "22px",
-  lineHeight: "60px",
   color: "#21243D",
+  justifyContent: "flex-start",
+};
+
+const postCardStyle = {
+  Radius: "4px",
+};
+
+const postCardHeader = {
+  marginTop: "20px",
+  marginBottom: "20px",
+};
+
+const postCardRow = {
+  marginBottom: "20px",
 };
 
 const imageStyle = {
-  width: "250px",
-  height: "180px",
-  borderRadius: "4px",
+  width: "100%",
+  height: "250px",
+  borderRadius: "6px",
 };
 
-const containerStyle = {
+const workCardRow = {
   display: "flex",
+  alignItems: "center",
+};
+
+const workImage = {
+  display: "flex",
+  alignItems: "center",
   justifyContent: "center",
 };
 
-// const center = {
-//   display: "flex",
-//   justifyContent: "center",
-//   alignItems: "center",
-//   marginTop: "10px",
-// };
-
-const spacing = {
-  margin: "15px",
-};
-
 const dateStyle = {
-  width: "70",
+  width: "40",
   height: "20",
-  background: "#142850",
+  background: "#21243D",
   borderRadius: "16px",
   fontFamily: "Heebo",
   fontStyle: "normal",
   fontWeight: "900",
-  fontSize: "18",
+  fontSize: "16",
   lineHeight: "60px",
   color: "#FFFFFF",
   padding: "5px",
+};
+
+const title = {
+  fontFamily: "Heebo",
+  fontStyle: "normal",
+  fontWeight: "bold",
+  fontSize: "30px",
+  lineHeight: "44px",
+  color: "#21243D",
+};
+
+const topic = {
+  fontFamily: "Heebo",
+  fontStyle: "normal",
+  fontWeight: "bold",
+  fontSize: "15px",
+  lineHeight: "29px",
+  color: "#8695A4",
 };
 
 export default function Home({ data }) {
@@ -91,100 +106,97 @@ export default function Home({ data }) {
     .filter((data) => data.parent.sourceInstanceName === "featuredWorks")
     .slice(0, 3);
 
-  console.log(data);
   return (
     <Layout>
       <Info />
-      <div style={{ backgroundColor: "#EDF7FA", width: "auto" }}>
-        <div style={containerStyle}>
-          {/* <div
-            style={{
-              display: "flex",
-              alignContent: "center",
-              height: "40px",
-            }}
-          >
-            <span style={recentPostStyle}>Recent posts</span>
-          </div>
-          <div style={{ padding: "5px", height: "40px" }}>
-            <Link to="/blog" style={viewAll}>
-              view all
-            </Link>
-          </div> */}
-
-          {posts.map((post) => (
-            <Col key={post.slug} style={{ padding: "10px" }}>
-              <Link
-                to={`/blog/${post.slug}`}
-                style={{ color: "inherit", textDecoration: "none" }}
-              >
-                <Card>
-                  <Card.Body>
-                    <Card.Title>{post.frontmatter.title} </Card.Title>
-                    <Card.Subtitle>
-                      {post.frontmatter.date} || {post.frontmatter.topic}
-                    </Card.Subtitle>
-                    <Card.Text>{post.excerpt}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Link>
-            </Col>
-          ))}
-        </div>
+      <div style={{ backgroundColor: "#EDF7FA" }}>
+        <Container style={{ marginTop: "20px" }}>
+          <Row>
+            <Row style={postCardHeader}>
+              <Col style={recentPostStyle}>Recent posts</Col>
+              <Col style={viewAll}>
+                <Link to="/blog">view all</Link>
+              </Col>
+            </Row>
+            <Row style={postCardRow}>
+              {posts.map((post) => (
+                <Col key={post.slug}>
+                  <Link
+                    to={`/blog/${post.slug}`}
+                    style={{ color: "inherit", textDecoration: "none" }}
+                  >
+                    <Card style={postCardStyle}>
+                      <Card.Body>
+                        <Card.Title style={title}>
+                          {post.frontmatter.title}{" "}
+                        </Card.Title>
+                        <Card.Subtitle style={topic}>
+                          {post.frontmatter.date} || {post.frontmatter.topic}
+                        </Card.Subtitle>
+                        <Card.Text>{post.excerpt}</Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Link>
+                </Col>
+              ))}
+            </Row>
+          </Row>
+        </Container>
       </div>
-      <div
-        style={{
-          display: "flex",
-          alignContent: "center",
-          marginLeft: "42px",
-        }}
-      >
-        <span style={featuredWork}> Featured work</span>
-      </div>
+      <Container style={{ marginTop: "20px" }}>
+        <Row>
+          <span style={featuredWork}> Featured work</span>
+        </Row>
+      </Container>
 
       {works.map((work) => {
         let image = getImage(work.frontmatter.work_image);
         return (
-          <div
-            style={{
-              display: "flex",
-              alignContent: "center",
-              marginLeft: "42px",
-            }}
-          >
-            <Row>
-              <Col md={4} style={containerStyle}>
-                {/* <Image style={imageStyle} src={img} /> */}
-                {/* <StaticImage
-                  alt="My profile photo"
-                  src="../images/imgCard.png"
-                  style={imageStyle}
-                /> */}
-                <GatsbyImage
-                  style={imageStyle}
-                  image={image}
-                  // alt={data.mdx.frontmatter.hero_image_alt}
-                />
+          <Container key={work.slug} style={{ marginTop: "20px" }}>
+            <Row style={workCardRow}>
+              <Col md={4} style={workImage}>
+                <GatsbyImage style={imageStyle} image={image} alt="" />
               </Col>
-              <Col md={8} style={containerStyle}>
+              <Col md={8}>
                 <Card.Body>
-                  <Card.Title style={spacing}>Card Title</Card.Title>
-                  <Card.Subtitle style={spacing}>
-                    {<span style={dateStyle}>2021</span>}
+                  <Card.Title style={title}>
+                    {work.frontmatter.title}
+                  </Card.Title>
+                  <Card.Subtitle>
+                    {
+                      <span style={dateStyle}>
+                        {work.frontmatter.date.split("-")[0]}
+                      </span>
+                    }
                     {` | `}
-                    {<span>project task</span>}
+                    <span style={topic}>{work.frontmatter.topic}</span>
                   </Card.Subtitle>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
+                  <Card.Text>{work.frontmatter.description}</Card.Text>
+                  <Card.Subtitle>
+                    {" "}
+                    <a href={work.frontmatter.github} target="_blank"  rel="noreferrer" >
+                      <FontAwesomeIcon
+                        icon={faGithub}
+                        size="2x"
+                        style={{ color: "#21243D" }}
+                      />
+                    </a>
+                    {` | `}
+                    <a href={work.frontmatter.workUrl} target="_blank"  rel="noreferrer" >
+                      <FontAwesomeIcon
+                        icon={faLink}
+                        size="2x"
+                        style={{ color: "#21243D" }}
+                      />
+                    </a>
+                  </Card.Subtitle>
                 </Card.Body>
               </Col>
               <Row style={{ marginTop: "20px" }}>
                 <hr style={{ border: "1px solid #E0E0E0" }} />
               </Row>
             </Row>
-          </div>
+          </Container>
         );
       })}
     </Layout>
@@ -195,7 +207,7 @@ export const query = graphql`
   query {
     allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
-        excerpt(pruneLength: 100)
+        excerpt(pruneLength: 200)
         slug
         parent {
           ... on File {
@@ -204,8 +216,11 @@ export const query = graphql`
         }
         frontmatter {
           date
+          github
+          workUrl
           title
           topic
+          description
           work_image {
             id
             childImageSharp {
