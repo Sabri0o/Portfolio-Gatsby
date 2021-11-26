@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@200&display=swap");
+
+.workCardRow {
+  display: flex;
+  align-items: center;
+}
+
+.workImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dateStyle {
+  width: 40;
+  height: 20;
+  background: #21243d;
+  border-radius: 16px;
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16;
+  line-height: 60px;
+  color: #ffffff;
+  padding: 5px;
+}
+
+.title {
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 44px;
+  color: #21243d;
+}
+
+.topic {
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 29px;
+  color: #8695a4;
+}

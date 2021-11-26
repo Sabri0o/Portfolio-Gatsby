@@ -7,96 +7,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
+import "../styles/home.css"
 
-const recentPostStyle = {
-  fontFamily: "Heebo",
-  fontStyle: "normal",
-  fontWeight: "normal",
-  fontSize: "22px",
-  color: "#21243D",
-  justifyContent: "flex-start",
-};
-
-const viewAll = {
-  display: "flex",
-  justifyContent: "flex-end",
-  fontFamily: "Heebo",
-  fontStyle: "normal",
-  fontWeight: "normal",
-  fontSize: "16px",
-  color: "#00A8CC",
-};
-
-const featuredWork = {
-  fontFamily: "Heebo",
-  fontStyle: "normal",
-  fontWeight: "normal",
-  fontSize: "22px",
-  color: "#21243D",
-  justifyContent: "flex-start",
-};
-
-const postCardStyle = {
-  Radius: "4px",
-};
-
-const postCardHeader = {
-  marginTop: "20px",
-  marginBottom: "20px",
-};
-
-const postCardRow = {
-  marginBottom: "20px",
-};
-
-const imageStyle = {
-  width: "100%",
-  height: "250px",
-  borderRadius: "6px",
-};
-
-const workCardRow = {
-  display: "flex",
-  alignItems: "center",
-};
-
-const workImage = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-};
-
-const dateStyle = {
-  width: "40",
-  height: "20",
-  background: "#21243D",
-  borderRadius: "16px",
-  fontFamily: "Heebo",
-  fontStyle: "normal",
-  fontWeight: "900",
-  fontSize: "16",
-  lineHeight: "60px",
-  color: "#FFFFFF",
-  padding: "5px",
-};
-
-const title = {
-  fontFamily: "Heebo",
-  fontStyle: "normal",
-  fontWeight: "bold",
-  fontSize: "30px",
-  lineHeight: "44px",
-  color: "#21243D",
-};
-
-const topic = {
-  fontFamily: "Heebo",
-  fontStyle: "normal",
-  fontWeight: "bold",
-  fontSize: "15px",
-  lineHeight: "29px",
-  color: "#8695A4",
-};
 
 export default function Home({ data }) {
   const posts = data.allMdx.nodes
@@ -112,25 +24,25 @@ export default function Home({ data }) {
       <div style={{ backgroundColor: "#EDF7FA" }}>
         <Container style={{ marginTop: "20px" }}>
           <Row>
-            <Row style={postCardHeader}>
-              <Col style={recentPostStyle}>Recent posts</Col>
-              <Col style={viewAll}>
+            <Row className="postCardHeader">
+              <Col className= "recentPostStyle">Recent posts</Col>
+              <Col className="viewAll">
                 <Link to="/blog">view all</Link>
               </Col>
             </Row>
-            <Row style={postCardRow}>
+            <Row className="postCardRow">
               {posts.map((post) => (
                 <Col key={post.slug}>
                   <Link
                     to={`/blog/${post.slug}`}
                     style={{ color: "inherit", textDecoration: "none" }}
                   >
-                    <Card style={postCardStyle}>
+                    <Card className="postCardStyle">
                       <Card.Body>
-                        <Card.Title style={title}>
+                        <Card.Title className="title">
                           {post.frontmatter.title}{" "}
                         </Card.Title>
-                        <Card.Subtitle style={topic}>
+                        <Card.Subtitle className="topic">
                           {post.frontmatter.date} || {post.frontmatter.topic}
                         </Card.Subtitle>
                         <Card.Text>{post.excerpt}</Card.Text>
@@ -145,7 +57,7 @@ export default function Home({ data }) {
       </div>
       <Container style={{ marginTop: "20px" }}>
         <Row>
-          <span style={featuredWork}> Featured work</span>
+          <span className="featuredWork"> Featured work</span>
         </Row>
       </Container>
 
@@ -153,23 +65,23 @@ export default function Home({ data }) {
         let image = getImage(work.frontmatter.work_image);
         return (
           <Container key={work.slug} style={{ marginTop: "20px" }}>
-            <Row style={workCardRow}>
-              <Col md={4} style={workImage}>
-                <GatsbyImage style={imageStyle} image={image} alt="" />
+            <Row className="workCardRow">
+              <Col md={4} className="workImage">
+                <GatsbyImage className="imageStyle" image={image} alt="" />
               </Col>
               <Col md={8}>
                 <Card.Body>
-                  <Card.Title style={title}>
+                  <Card.Title className="title">
                     {work.frontmatter.title}
                   </Card.Title>
                   <Card.Subtitle>
                     {
-                      <span style={dateStyle}>
+                      <span className="dateStyle">
                         {work.frontmatter.date.split(",")[1]}
                       </span>
                     }
                     {` | `}
-                    <span style={topic}>{work.frontmatter.topic}</span>
+                    <span className="topic">{work.frontmatter.topic}</span>
                   </Card.Subtitle>
                   <Card.Text>{work.frontmatter.description}</Card.Text>
                   <Card.Subtitle>

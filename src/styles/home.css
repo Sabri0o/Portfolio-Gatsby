@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@200&display=swap");
+
+.recentPostStyle {
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  color: "#21243D";
+  display: flex;
+  justify-content: "flex-start";
+}
+
+.viewAll {
+  display: flex;
+  justify-content: flex-end;
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color: "#00A8CC";
+}
+
+.featuredWork {
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  color: "#21243D";
+  display: flex;
+  justify-content: flex-start;
+}
+
+.postCardStyle {
+  border-radius: 4px;
+}
+
+.postCardHeader {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.postCardRow {
+  margin-bottom: 20px;
+}
+
+.imageStyle {
+  width: 100%;
+  height: 250px;
+  border-radius: 6px;
+}
+
+.workCardRow {
+  display: flex;
+  align-items: center;
+}
+
+.workImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dateStyle {
+  width: 40;
+  height: 20;
+  background: #21243d;
+  border-radius: 16px;
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16;
+  line-height: 60px;
+  color: #FFFFFF;
+  padding: 5px;
+}
+
+.title {
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 44px;
+  color: #21243d;
+}
+
+.topic {
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 29px;
+  color: #8695a4;
+}

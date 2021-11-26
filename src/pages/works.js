@@ -6,6 +6,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
+import "../styles/works.css";
 
 const imageStyle = {
   width: "100%",
@@ -13,74 +14,31 @@ const imageStyle = {
   borderRadius: "6px",
 };
 
-const workCardRow = {
-  display: "flex",
-  alignItems: "center",
-};
-
-const workImage = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-};
-
-const dateStyle = {
-  width: "40",
-  height: "20",
-  background: "#21243D",
-  borderRadius: "16px",
-  fontFamily: "Heebo",
-  fontStyle: "normal",
-  fontWeight: "900",
-  fontSize: "16",
-  lineHeight: "60px",
-  color: "#FFFFFF",
-  padding: "5px",
-};
-
-const title = {
-  fontFamily: "Heebo",
-  fontStyle: "normal",
-  fontWeight: "bold",
-  fontSize: "30px",
-  lineHeight: "44px",
-  color: "#21243D",
-};
-
-const topic = {
-  fontFamily: "Heebo",
-  fontStyle: "normal",
-  fontWeight: "bold",
-  fontSize: "15px",
-  lineHeight: "29px",
-  color: "#8695A4",
-};
-
 export default function Work({ data }) {
   return (
     <Layout>
-      <h2 style={{ marginLeft: "100px",marginTop: "100px" }}>Featured work</h2>
+      <h2 style={{ marginLeft: "100px", marginTop: "100px" }}>Featured work</h2>
       {data.allMdx.nodes.map((work) => {
         let image = getImage(work.frontmatter.work_image);
         return (
           <Container key={work.slug} style={{ marginTop: "20px" }}>
-            <Row style={workCardRow}>
-              <Col md={4} style={workImage}>
+            <Row className="workCardRow">
+              <Col md={4} className="workImage">
                 <GatsbyImage style={imageStyle} image={image} alt="" />
               </Col>
               <Col md={8}>
                 <Card.Body>
-                  <Card.Title style={title}>
+                  <Card.Title className="title">
                     {work.frontmatter.title}
                   </Card.Title>
                   <Card.Subtitle>
                     {
-                      <span style={dateStyle}>
+                      <span className="dateStyle">
                         {work.frontmatter.date.split("-")[0]}
                       </span>
                     }
                     {` | `}
-                    <span style={topic}>{work.frontmatter.topic}</span>
+                    <span className="topic">{work.frontmatter.topic}</span>
                   </Card.Subtitle>
                   <Card.Text>{work.frontmatter.description}</Card.Text>
                   <Card.Subtitle>
