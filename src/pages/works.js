@@ -17,7 +17,7 @@ const imageStyle = {
 export default function Work({ data }) {
   return (
     <Layout>
-      <Container style={{ marginTop: "80px" }}>
+      <Container className='container'>
         <h2>Featured work</h2>
         {data.allMdx.nodes.map((work) => {
           let image = getImage(work.frontmatter.work_image);

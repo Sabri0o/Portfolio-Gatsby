@@ -73,22 +73,22 @@ const Layout = ({ pageTitle, children }) => {
       <footer className={footerStyle}>
         <div>
           <div className={social_logos}>
-            <a href="https://www.youtube.com/c/jamesqquick" className={logo}>
+            <a
+              href="https://www.linkedin.com/in/sabri-trabelsi-43b181208/"
+              className={logo}
+            >
               <FontAwesomeIcon icon={faLinkedin} size="2x" />
             </a>
             <a
-              href="https://www.facebook.com/learnbuildteach/"
+              href="https://www.facebook.com/sabri.trabelsi.754703/"
               className={logo}
             >
               <FontAwesomeIcon icon={faFacebook} size="2x" />
             </a>
-            <a href="https://www.twitter.com/jamesqquick" className={logo}>
+            <a href="https://twitter.com/home?lang=en" className={logo}>
               <FontAwesomeIcon icon={faTwitter} size="2x" />
             </a>
-            <a
-              href="https://www.instagram.com/learnbuildteach"
-              className={logo}
-            >
+            <a href="https://www.instagram.com/" className={logo}>
               <FontAwesomeIcon icon={faInstagram} size="2x" />
             </a>
           </div>

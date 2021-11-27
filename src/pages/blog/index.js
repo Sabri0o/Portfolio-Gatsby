@@ -7,7 +7,7 @@ import "../../styles/blog.css";
 export default function Blog({ data }) {
   return (
     <Layout>
-      <Container style={{ marginTop: "80px" }}>
+      <Container className='container'>
         <h2>Blog</h2>
         {data.allMdx.nodes.map((node) => (
           <Row key={node.slug}>
