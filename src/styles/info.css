@@ -1,18 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@200&display=swap");
 
-.imageStyle {
-  width: 200;
-  height: 200;
-  border-radius: 200 / 2;
-  border-style: groove;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .h2Style {
   font-family: Heebo;
   font-style: normal;
@@ -28,6 +15,39 @@
   font-size: 16px;
   line-height: 23px;
   color: #21243d;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  .h2Style {
+    text-align: center;
+  }
+  .pStyle {
+    text-align: center;
+  }
+}
+
+.imageStyle {
+  width: 200;
+  height: 200;
+  border-radius: 200 / 2;
+  border-style: groove;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttonStyle {

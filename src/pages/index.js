@@ -21,9 +21,9 @@ export default function Home({ data }) {
   return (
     <Layout>
       <Info />
-      <div style={{ backgroundColor: "#EDF7FA" }}>
+      <div className="recentPostsContainerColor">
         <Container style={{ marginTop: "20px" }}>
-          <Row>
+          <Row className="recentPostsContainer">
             <Row className="postCardHeader">
               <Col className= "recentPostStyle">Recent posts</Col>
               <Col className="viewAll">

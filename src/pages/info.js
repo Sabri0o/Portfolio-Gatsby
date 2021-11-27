@@ -13,7 +13,7 @@ const imageStyle = {
 
 export default function Info() {
   return (
-    <Container style={{ marginTop: "100px" }}>
+    <Container className="container">
       <Row>
         <Col md={8}>
           <h2 className="h2Style">Hi, my name is Sabri,</h2>
@@ -37,17 +37,17 @@ export default function Info() {
           />
         </Col>
       </Row>
-        <Row style={{ marginTop: "20px", marginBottom: "40px" }}>
-          <button className="buttonStyle">
-            <a
-              href={downloadFile}
-              download
-              style={{ color: "inherit", textDecoration: "none" }}
-            >
-              Download Resume
-            </a>
-          </button>
-        </Row>
+      <Row style={{ marginTop: "20px", marginBottom: "40px" }}>
+        <button className="buttonStyle">
+          <a
+            href={downloadFile}
+            download
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            Download Resume
+          </a>
+        </button>
+      </Row>
     </Container>
   );
 }

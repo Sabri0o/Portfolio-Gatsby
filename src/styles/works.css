@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@200&display=swap");
 
+
+
 .workCardRow {
+  margin-top: 25px; 
   display: flex;
   align-items: center;
 }

@@ -1,5 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@200&display=swap");
 
+.postCardRow {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 700px) {
+  .postCardRow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+  }
+  .recentPostsContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+}
+
+
+
+.recentPostsContainerColor{
+  background-color: #edf7fa;
+}
+
 .recentPostStyle {
   font-family: Heebo;
   font-style: normal;
@@ -39,9 +70,6 @@
   margin-bottom: 20px;
 }
 
-.postCardRow {
-  margin-bottom: 20px;
-}
 
 .imageStyle {
   width: 100%;
@@ -70,7 +98,7 @@
   font-weight: 900;
   font-size: 16;
   line-height: 60px;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 5px;
 }
 

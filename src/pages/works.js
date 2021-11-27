@@ -17,65 +17,67 @@ const imageStyle = {
 export default function Work({ data }) {
   return (
     <Layout>
-      <h2 style={{ marginLeft: "100px", marginTop: "100px" }}>Featured work</h2>
-      {data.allMdx.nodes.map((work) => {
-        let image = getImage(work.frontmatter.work_image);
-        return (
-          <Container key={work.slug} style={{ marginTop: "20px" }}>
-            <Row className="workCardRow">
-              <Col md={4} className="workImage">
-                <GatsbyImage style={imageStyle} image={image} alt="" />
-              </Col>
-              <Col md={8}>
-                <Card.Body>
-                  <Card.Title className="title">
-                    {work.frontmatter.title}
-                  </Card.Title>
-                  <Card.Subtitle>
-                    {
-                      <span className="dateStyle">
-                        {work.frontmatter.date.split("-")[0]}
-                      </span>
-                    }
-                    {` | `}
-                    <span className="topic">{work.frontmatter.topic}</span>
-                  </Card.Subtitle>
-                  <Card.Text>{work.frontmatter.description}</Card.Text>
-                  <Card.Subtitle>
-                    {" "}
-                    <a
-                      href={work.frontmatter.github}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FontAwesomeIcon
-                        icon={faGithub}
-                        size="2x"
-                        style={{ color: "#21243D" }}
-                      />
-                    </a>
-                    {` | `}
-                    <a
-                      href={work.frontmatter.workUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FontAwesomeIcon
-                        icon={faLink}
-                        size="2x"
-                        style={{ color: "#21243D" }}
-                      />
-                    </a>
-                  </Card.Subtitle>
-                </Card.Body>
-              </Col>
+      <Container style={{ marginTop: "80px" }}>
+        <h2>Featured work</h2>
+        {data.allMdx.nodes.map((work) => {
+          let image = getImage(work.frontmatter.work_image);
+          return (
+            <Row key={work.slug}>
+              <Row className="workCardRow">
+                <Col md={4} className="workImage">
+                  <GatsbyImage style={imageStyle} image={image} alt="" />
+                </Col>
+                <Col md={8}>
+                  <Card.Body>
+                    <Card.Title className="title">
+                      {work.frontmatter.title}
+                    </Card.Title>
+                    <Card.Subtitle>
+                      {
+                        <span className="dateStyle">
+                          {work.frontmatter.date.split("-")[0]}
+                        </span>
+                      }
+                      {` | `}
+                      <span className="topic">{work.frontmatter.topic}</span>
+                    </Card.Subtitle>
+                    <Card.Text>{work.frontmatter.description}</Card.Text>
+                    <Card.Subtitle>
+                      {" "}
+                      <a
+                        href={work.frontmatter.github}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FontAwesomeIcon
+                          icon={faGithub}
+                          size="2x"
+                          style={{ color: "#21243D" }}
+                        />
+                      </a>
+                      {` | `}
+                      <a
+                        href={work.frontmatter.workUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FontAwesomeIcon
+                          icon={faLink}
+                          size="2x"
+                          style={{ color: "#21243D" }}
+                        />
+                      </a>
+                    </Card.Subtitle>
+                  </Card.Body>
+                </Col>
+              </Row>
+              <Row style={{ marginTop: "20px" }}>
+                <hr style={{ border: "1px solid #E0E0E0" }} />
+              </Row>
             </Row>
-            <Row style={{ marginTop: "20px" }}>
-              <hr style={{ border: "1px solid #E0E0E0" }} />
-            </Row>
-          </Container>
-        );
-      })}
+          );
+        })}
+      </Container>
     </Layout>
   );
 }
