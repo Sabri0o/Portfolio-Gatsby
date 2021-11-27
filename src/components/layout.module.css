@@ -47,3 +47,39 @@
   margin-bottom: 20px;
   margin-top: 50px;
 }
+
+.icon {
+  display: none;
+}
+
+.menuButton {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+@media screen and (max-width: 700px) {
+  .icon {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2rem;
+  }
+
+  .nav-links .nav-link-item {
+    display: none;
+  }
+
+  .nav-links.responsive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links.responsive .nav-link-item {
+    display: inline;
+  }
+}

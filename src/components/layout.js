@@ -1,6 +1,10 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "gatsby";
 import {
+  menuButton,
+  responsive,
+  icon,
   navLinks,
   navLinkItem,
   navLinkText,
@@ -17,13 +21,32 @@ import {
   faTwitter,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Layout = ({ pageTitle, children }) => {
+  const [clicked, setClicked] = useState(false);
+
+  const handleOnClick = () => {
+    setClicked((clicked) => !clicked);
+  };
+
   return (
     <div style={{ marginTop: "15px" }}>
       <title>{pageTitle}</title>
       <nav>
-        <ul className={navLinks}>
+        <div className={icon}>
+          <button className={menuButton} onClick={handleOnClick}>
+            <FontAwesomeIcon
+              icon={faBars}
+              size="2x"
+              style={{ color: "#21243D" }}
+            />{" "}
+          </button>
+        </div>
+        <ul
+          className={`${navLinks} ${clicked ? responsive : ""}`}
+          id="displayNav"
+        >
           <li className={navLinkItem}>
             <Link to="/" className={navLinkText}>
               Home

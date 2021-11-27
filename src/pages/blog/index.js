@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../../components/layout";
-import { Card, Row, Container } from "react-bootstrap";
 import { Link, graphql } from "gatsby";
+import { Card, Row, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/blog.css";
 export default function Blog({ data }) {
