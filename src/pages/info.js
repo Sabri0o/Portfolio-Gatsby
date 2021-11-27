@@ -37,7 +37,7 @@ export default function Info() {
           />
         </Col>
       </Row>
-      <Row style={{ marginTop: "20px", marginBottom: "40px" }}>
+      <Row className="buttonContainer">
         <button className="buttonStyle">
           <a
             href={downloadFile}

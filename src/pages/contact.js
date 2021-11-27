@@ -2,7 +2,6 @@ import React from "react";
 import Layout from "../components/layout";
 const myStyle = {
   marginLeft: "100px",
-  marginTop: "60px",
   marginRight: "60px",
   fontFamily: "Heebo",
   fontStyle: "normal",

@@ -1,4 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@200&display=swap");
+.tab {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.buttonStyle {
+  width: 208px;
+  height: 47px;
+  background: #ff6464;
+  border-radius: 2px;
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  color: #ffffff;
+}
+
+.buttonContainer {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
 
 .h2Style {
   font-family: Heebo;
@@ -35,6 +57,13 @@
   .pStyle {
     text-align: center;
   }
+  .tab {
+    display: none;
+    margin-left: none;
+  }
+  .buttonContainer {
+    margin-bottom: 0px;
+  }
 }
 
 .imageStyle {
@@ -50,20 +79,3 @@
   align-items: center;
 }
 
-.buttonStyle {
-  width: 208px;
-  height: 47px;
-  background: #ff6464;
-  border-radius: 2px;
-  font-family: Heebo;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 29px;
-  color: #ffffff;
-}
-
-.tab {
-  display: inline-block;
-  margin-left: 20px;
-}
