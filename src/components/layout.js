@@ -33,7 +33,6 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <div style={{ marginTop: "15px" }}>
       <title>{pageTitle}</title>
-      <nav>
         <div className={icon}>
           <button className={menuButton} onClick={handleOnClick}>
             <FontAwesomeIcon
@@ -43,6 +42,7 @@ const Layout = ({ pageTitle, children }) => {
             />{" "}
           </button>
         </div>
+      <nav>
         <ul
           className={`${navLinks} ${clicked ? responsive : ""}`}
           id="displayNav"

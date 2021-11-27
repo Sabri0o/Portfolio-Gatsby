@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@200&display=swap");
+
 .nav-links {
   display: flex;
   justify-content: flex-end;
@@ -77,6 +78,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links {
+    margin-left: 35px;
   }
 
   .nav-links.responsive .nav-link-item {

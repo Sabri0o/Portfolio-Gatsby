@@ -18,8 +18,7 @@
 }
 
 .buttonContainer {
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .h2Style {
@@ -44,6 +43,12 @@
 }
 
 @media screen and (max-width: 700px) {
+  .rowContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
   .container {
     display: flex;
     flex-direction: column;
@@ -53,6 +58,8 @@
   }
   .h2Style {
     text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
   .pStyle {
     text-align: center;
@@ -61,16 +68,6 @@
     display: none;
     margin-left: none;
   }
-  .buttonContainer {
-    margin-bottom: 0px;
-  }
-}
-
-.imageStyle {
-  width: 200;
-  height: 200;
-  border-radius: 200 / 2;
-  border-style: groove;
 }
 
 .center {
@@ -78,4 +75,3 @@
   justify-content: center;
   align-items: center;
 }
-

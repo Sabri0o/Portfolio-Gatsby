@@ -14,12 +14,13 @@ const imageStyle = {
 export default function Info() {
   return (
     <Container className="container">
-      <Row>
+      <Row className="rowContainer">
         <Col md={8}>
-          <h2 className="h2Style">Hi, my name is Sabri,</h2>
           <h2 className="h2Style">
-            A motivated junior fullstack web developer,
+            Hi, my name is Sabri,
+            <br />A motivated junior fullstack web developer,
           </h2>
+
           <p className="pStyle">
             <span className="tab"></span>a problem solver and a quick thinker. I
             am dedicated to my own continuous self-development, I enjoy working
