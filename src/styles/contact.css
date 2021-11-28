@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+}
+.myStyle {
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  color: #21243d;
+}
+@media screen and (max-width: 700px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .myStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+}
